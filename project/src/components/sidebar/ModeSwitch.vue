@@ -24,6 +24,9 @@ export default {
             getMenu: {},
         }
     },
+    created(){
+        
+    },
     mounted(){
         this.defaultMode();
     },

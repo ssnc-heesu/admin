@@ -13,12 +13,12 @@
 
         <ModeSwitch />
         <OverLay :data-name="dataName"/>
-</aside>
+    </aside>
 </template>
 
 <script>
 import ModeSwitch from '@/components/sidebar/ModeSwitch.vue';
-import OverLay from '@/components/OverLay.vue';
+import OverLay from '@/components/items/OverLay.vue';
 export default {
     name: 'SideBar',
     components: {
@@ -27,8 +27,27 @@ export default {
     },
     data(){
         return {
-            dataName: "sideMenu"
+            dataName: "sideMenu",
+            getMenu: {},
         }
+    },
+    mounted(){
+        // this.getList()
+    },
+    methods:{
+        // 안나와
+        getList() {
+            // 몰라몰라?
+            this.$axios
+                .post('http://localhost:8191/menu/selectMenuList')
+                .then((res) => {
+                    this.getMenu = res.data;
+                })
+                .catch((res) => {
+                    console.error(res);
+                });
+                // 안나와
+        },
     }
 }
 </script>
