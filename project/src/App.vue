@@ -29,6 +29,7 @@ export default {
         }
     },
     computed:{
+        // currentPath의 값을 / 기준으로 나눠 배열로 리턴
         PathObject() {
             return this.currentPath.split("/").filter(segment => segment !== "");
         }
@@ -39,6 +40,7 @@ export default {
     },
 
     watch: {
+        // route가 이동될때마다 currentPath의 값을 업데이트
         '$route.fullPath': function(newPath) {
             this.currentPath = newPath;
         }

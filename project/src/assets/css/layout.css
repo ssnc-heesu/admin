@@ -87,25 +87,6 @@
     background: var(--bgColor);
     z-index: 10;
 }
-.content-tit {
-    margin-bottom: 48px;
-    font-size: 18px;
-    font-weight: 800;
-}
-.content-tit > * {
-    display: inline-block;
-}
-.content-tit > * + *::before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    width: 6px;
-    height: 6px;
-    margin: -2px 14px 0 10px;
-    border: solid var(--mainTxt);
-    border-width: 2px 2px 0 0;
-    transform: rotate(45deg);
-}
 .content-item {
     position: relative;
 }

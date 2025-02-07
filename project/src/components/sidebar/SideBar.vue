@@ -35,9 +35,7 @@ export default {
         // this.getList()
     },
     methods:{
-        // 안나와
         getList() {
-            // 몰라몰라?
             this.$axios
                 .post('http://localhost:8191/menu/selectMenuList')
                 .then((res) => {
@@ -46,7 +44,6 @@ export default {
                 .catch((res) => {
                     console.error(res);
                 });
-                // 안나와
         },
     }
 }

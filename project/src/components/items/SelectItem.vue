@@ -22,8 +22,8 @@ export default {
     name: 'SelectItem',
     props: {
         selectID: { type: String },
-        selectValue: { type: String, default: "" },
-        selectOption: { type: Array, required: true },
+        selectValue: { type: String },
+        selectOption: { type: Array },
     },
     components: {
     },
