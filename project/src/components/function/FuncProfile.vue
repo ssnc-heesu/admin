@@ -9,7 +9,7 @@
 <script>
 import Select from '@/components/items/SelectItem.vue'
 export default {
-    name: 'FuncLanuge',
+    name: 'FuncProfile',
     components: {
         Select
     },

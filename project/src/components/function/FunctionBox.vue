@@ -1,15 +1,15 @@
 <template>
     <div class="function-box">
-        <FuncLanuge />
+        <FuncLanguage />
     </div>
 </template>
   
 <script>
-import FuncLanuge from '@/components/function/FuncLanuge.vue'
+import FuncLanguage from '@/components/function/FuncLanguage.vue'
 export default {
     name: 'FunctionBox',
     components: {
-        FuncLanuge
+        FuncLanguage
     }
 }
 </script>

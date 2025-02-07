@@ -1,6 +1,7 @@
 <template>
     <h2 class="content-tit">
-        <span v-for="cate in CateName" :key="cate">{{ cate }}</span>
+        <span>{{ MajorCate }}</span>
+        <span>{{ MiddleCate }}</span>
     </h2>
 </template>
 
@@ -21,7 +22,10 @@
 export default {
     name: 'OverLay',
     props: {
-        CateName: {type:Array}
+        MajorCate:{ type:String },
+        MiddleCate:{ type:String },
+    },
+    components: {
     },
 }
 </script>
