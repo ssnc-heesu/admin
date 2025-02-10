@@ -11,7 +11,10 @@
             :data-value="selectValue" />
 
             <router-view />
+            <Footer />
         </div>
+
+        <!-- <Modal/> -->
     </div>
 </template>
   
@@ -20,13 +23,18 @@ import SideBar from '@/components/sidebar/SideBar.vue';
 import FunctionBox from '@/components/function/FunctionBox.vue';
 import ContentTitle from '@/components/items/ContentTitle.vue';
 import Select from '@/components/items/SelectItem.vue'
+import Footer from '@/components/FooterView.vue'
+
+// import Modal from '@/components/modal/ModalWrap.vue'
 export default {
     name: 'RequestFirewallPolicy',
     components: {
         SideBar,
         FunctionBox,
         ContentTitle,
-        Select
+        Select,
+        Footer,
+        // Modal
     },
     data() {
         return {

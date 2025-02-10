@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 
+import { createPinia } from 'pinia';
 import axios from 'axios';
 import routers from './router/index.js';
 
@@ -12,9 +13,10 @@ import '@/assets/css/layout.css'
 // 공통 js
 import '@/assets/js/common.js'
 
+const pinia = createPinia();
 
 
 const app = createApp(App)
 app.config.globalProperties.$axios = axios
-app.use(routers).mount('#app')
+app.use(pinia).use(routers).mount('#app')
 
