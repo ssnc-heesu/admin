@@ -4,11 +4,11 @@ import RequestFirewallPolicyView from '@/views/request/RequestFirewallPolicyView
 const routes = [
     {
         path: '/',
-        redirect: '/request/requestFirewallPolicy'
+        redirect: '/request/RequestFirewallPolicy'
         // 초기진입시(/경로) 해당 경로로 리다이렉트
     },
     {
-        path: '/request/requestFirewallPolicy',
+        path: '/request/RequestFirewallPolicy',
         name: 'RequestFirewallPolicyView',
         component: RequestFirewallPolicyView
     }

@@ -1,23 +1,19 @@
 <template>
-    <Select 
-    v-model="selectedValue" 
+    <LanguageSelect 
     :selectID="selectID" 
-    :data-value="selectValue" 
     :selectOption="selectOption" />
 </template>
   
 <script>
-import Select from '@/components/items/SelectItem.vue'
+import LanguageSelect from '@/components/function/LanguageSelect.vue'
 export default {
     name: 'FuncLanguage',
     components: {
-        Select
+        LanguageSelect
     },
     data() {
         return {
-            selectedValue: '',
             selectID: 'languageSelect',
-            selectValue: '',
             selectOption: [
                 { 
                     dataText: 'select01',

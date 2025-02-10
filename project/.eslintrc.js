@@ -12,7 +12,7 @@ module.exports = {
     requireConfigFile: false,
   },
   rules: {
-    "no-console": "warn",
+    "no-console": "off",
     "no-unused-vars": "warn",
   },
 }
