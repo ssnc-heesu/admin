@@ -1,9 +1,11 @@
-function htmlMode(){
-   
-    let htmlTheme = sessionStorage.getItem('colorTheme') || sessionStorage.setItem('colorTheme','light');
+function htmlMode() {
+    let htmlTheme = sessionStorage.getItem('colorTheme');
 
-    document.querySelector('html').dataset.theme = htmlTheme
+    if (!htmlTheme) {
+        htmlTheme = 'light';
+        sessionStorage.setItem('colorTheme', htmlTheme);
+    }
+
+    document.querySelector('html').dataset.theme = htmlTheme;
 }
 htmlMode();
-
-console.log('ddddddd')
