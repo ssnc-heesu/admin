@@ -10,23 +10,22 @@
             <div class="full-logo">Breezeway FireONE</div>
             <button type="button" class="btn-close" data-name="sideMenu"><i data-lucide="chevrons-left" width="20"></i></button>
             <ul class="menu-list"></ul>
+
+            <div class="overlay"></div>
         </div>
 
         <ModeSwitch />
-        <OverLay :data-name="dataName"/>
     </aside>
 </template>
 
 <script>
 import ModeSwitch from '@/components/sidebar/ModeSwitch.vue';
-import OverLay from '@/components/items/OverLay.vue';
 
 import { menuList } from '@/assets/js/dummy/menuList';
 export default {
     name: 'SideBar',
     components: {
         ModeSwitch,
-        OverLay
     },
     data(){
         return {

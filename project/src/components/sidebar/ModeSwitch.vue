@@ -1,11 +1,11 @@
 <template>
     <div class="mode">
-            <input type="checkbox" id="mode" class="switch" v-model="modeChk" @change="modeChange">
-            <label for="mode">
-                <Sun default-class="light"/>
-                <Moon default-class="dark"/>
-            </label>
-        </div>
+        <input type="checkbox" id="mode" class="switch" v-model="modeChk" @change="modeChange">
+        <label for="mode">
+            <Sun default-class="light"/>
+            <Moon default-class="dark"/>
+        </label>
+    </div>
 </template>
 
 <script>

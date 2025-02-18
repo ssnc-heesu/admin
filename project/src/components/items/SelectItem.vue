@@ -9,7 +9,9 @@
             @click.stop="changeSelect(option)"
             >{{ option.dataText }}</li>
         </ul>
-        <input type="hidden" name="protocol" class="select-value"  :value="selectedOption">
+        <input type="hidden" name="protocol" class="select-value" :value="selectedOption">
+
+        {{ selectedOption }}
     </div>
 </template>
 
@@ -24,8 +26,8 @@ export default {
     mixins: [dropDownMixin],
     props: {
         selectID: { type: String },
-        selectValue: { type: String},
-        selectOption: { type: Array,},
+        selectValue: { type: String },
+        selectOption: { type: Array },
     },
     components: {
     },
@@ -36,10 +38,7 @@ export default {
         }
     },
     computed: {
-        selectedOptionText() {
-            const selected = this.selectOption.find(option => option.dataValue === this.selectedOption);
-            return selected ? selected.dataText : "Select";
-        }
+
     },
     methods: {
         toggleDropdown() {

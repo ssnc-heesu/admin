@@ -1,3 +1,4 @@
+// 컬러 모드
 function htmlMode() {
     let htmlTheme = sessionStorage.getItem('colorTheme');
 
