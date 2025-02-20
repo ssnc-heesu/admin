@@ -1,6 +1,5 @@
 <template>
     <div>
-        ert
     </div>
 </template>
   
@@ -8,6 +7,7 @@
 export default {
     name: 'RequestFirewallPolicy',
     components: {
+
     },
 
 }

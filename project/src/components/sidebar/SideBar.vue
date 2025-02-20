@@ -1,6 +1,5 @@
 <template>
     <aside id="sideMenu">
-        {{ formattedMenuList }}
         <img src="@/assets/img/img_logo.png" style="width :28px; height: 28px;" class="logo">
         <nav>
             <ul></ul>
@@ -21,7 +20,6 @@
 <script>
 import ModeSwitch from '@/components/sidebar/ModeSwitch.vue';
 
-import { menuList } from '@/assets/js/dummy/menuList';
 export default {
     name: 'SideBar',
     components: {
@@ -30,24 +28,21 @@ export default {
     data(){
         return {
             dataName: "sideMenu",
-            menuList
         }
     },
     computed: {
-        // menuList를 JSON 형식으로 변환하여 반환
-        formattedMenuList() {
-            return JSON.stringify(this.menuList, null, 2);
-        },
+
     },
     mounted(){
-        // this.getList()
+        this.getList()
     },
     methods:{
         getList() {
             this.$axios
-                .post('http://localhost:8191/menu/selectMenuList')
+                .get('http://localhost:8191/menu/selectMenuForSideBar')
                 .then((res) => {
                     this.getMenu = res.data;
+                    console.log(res)
                 })
                 .catch((res) => {
                     console.error(res);

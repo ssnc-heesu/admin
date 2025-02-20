@@ -44,12 +44,13 @@
 </style>
 
 <script>
-import ModalTest01 from '@/components/modal/ModalTest01.vue'
-import ModalTest02 from '@/components/modal/ModalTest02.vue'
+import ModalTest01 from '@/components/modal/ModalTest01.vue';
+import ModalTest02 from '@/components/modal/ModalTest02.vue';
 
-import { useStore } from '@/stores'
+import { useStore } from '@/stores';
 export default {
     name: 'ModalWrap',
+
     props:{
         modalTit:{type:String},
         modalSize:{type:String},

@@ -34,7 +34,7 @@
 </template>
   
 <script>
-import { useStore } from '@/stores'
+import ModalOpen from '@/assets/js/mixin/ModalOpen';
 
 import SideBar from '@/components/sidebar/SideBar.vue';
 import FunctionBox from '@/components/function/FunctionBox.vue';
@@ -44,6 +44,7 @@ import Footer from '@/components/FooterView.vue'
 import Modal from '@/components/modal/ModalWrap.vue'
 export default {
     name: 'RequestFirewallPolicy',
+    mixins: [ModalOpen],
     components: {
         SideBar,
         FunctionBox,
@@ -54,17 +55,9 @@ export default {
     },
     data() {
         return {
-            store: useStore(),
-
             basicInner: true,
             innerSM: false,
             currentPath: this.$route.fullPath,
-
-            // modal 관련
-            modalTit: '',
-            modalSize: '',
-            visibleModal: '',
-            modalGuide:'',
 
             // select 관련
             selectID: 'selectTest',
@@ -85,26 +78,11 @@ export default {
             .filter(segment => segment !== "")
             .map(segment => segment.replace(/([a-z])([A-Z])/g, '$1 $2'));
         },
-        modalState() {
-            return this.store.modalState.modalWrap
-        },
     },
     mounted() {
     },
     methods: {
-        openModal(modalName) {
-            this.store.openModal(modalName)
-            console.log(modalName)
-        },
-
-        modalInfo(tit,size,con,guide){
-            this.modalTit = tit;
-            this.modalSize = size;
-            this.visibleModal = con;
-            this.modalGuide = guide;
-        }
     },
-
     watch: {
         // route가 이동될때마다 currentPath의 값을 업데이트
         '$route.fullPath': function(newPath) {
