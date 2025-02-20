@@ -1,57 +1,49 @@
 <template>
     <div class="wrap">
         <SideBar />
-        <div :class="{ 'inner': basicInner, 'inner-sm': innerSM }">
-            <FunctionBox />
-            <ContentTitle :CateName="PathObject"/>
-            
-            <button 
-            @click="openModal('modalWrap'), 
-            modalInfo('modalTest1', 'modal-sm', 'ModalTest01','')">modalTest1</button>
+        <div class="content-wrap">
+            <div :class="{ 'inner': basicInner, 'inner-sm': innerSM }">
+                <FunctionBox />
 
-            <button 
-            @click="openModal('modalWrap'), 
-            modalInfo('modalTest2', 'modal-sm', 'ModalTest02','모달설명도 나오는지 궁금해서 만들어 봄')">modalTest2</button>
-            <Select 
-            :selectValue= selectValue
-            :selectID="selectID" 
-            :data-value="selectValue"
-            :selectOption="selectOption" />
+                <ContentTitle :CateName="PathObject"/>
+                
 
-            <router-view />
-            <Footer />
+                <Select 
+                :selectValue= selectValue
+                :selectID="selectID" 
+                :data-value="selectValue"
+                :selectOption="selectOption" />
+
+                <router-view />
+
+
+                <Footer />
+            </div>
         </div>
-
-        <Modal 
-        v-if="modalState === true" 
-        :modalTit="modalTit"
-        :modalSize="modalSize"
-        :visibleModal="visibleModal"
-        :modalGuide="modalGuide"
-        />
-
-</div>
+    </div>
 </template>
   
 <script>
-import ModalOpen from '@/assets/js/mixin/ModalOpen';
+
 
 import SideBar from '@/components/sidebar/SideBar.vue';
 import FunctionBox from '@/components/function/FunctionBox.vue';
 import ContentTitle from '@/components/items/ContentTitle.vue';
 import Select from '@/components/items/SelectItem.vue'
 import Footer from '@/components/FooterView.vue'
-import Modal from '@/components/modal/ModalWrap.vue'
+
+
+
+
 export default {
     name: 'RequestFirewallPolicy',
-    mixins: [ModalOpen],
+
     components: {
         SideBar,
         FunctionBox,
         ContentTitle,
         Select,
         Footer,
-        Modal
     },
     data() {
         return {
@@ -78,10 +70,6 @@ export default {
             .filter(segment => segment !== "")
             .map(segment => segment.replace(/([a-z])([A-Z])/g, '$1 $2'));
         },
-    },
-    mounted() {
-    },
-    methods: {
     },
     watch: {
         // route가 이동될때마다 currentPath의 값을 업데이트

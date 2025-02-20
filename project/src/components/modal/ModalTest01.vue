@@ -1,32 +1,24 @@
 <template>
+    <div class="modal-content" :modalSize="modalSize">
+        <div class="modal-head">
+            <h2>{{ modalTit }}</h2>
+            <p v-if="modalGuide!==''">{{ modalGuide }}</p>
+            <button type="button" class="btn-modal-close" @click="closeModal('modalWrap')"><span class="blind">닫기</span></button>
+        </div>
         <div class="modal-body">
             <span style="color:red;">ModalWrap01 의 modal-body</span>
         </div>
         <div class="modal-foot">
             <span style="color:red;">ModalWrap01 의 modal-foot</span>
         </div>
+    </div>
 </template>
 
 <script>
-import { useStore } from '@/stores'
+import modalPropsMixin from '@/assets/js/mixin/modalPropsMixin';
+
 export default {
     name: 'ModalTest01',
-    components:{
-    },
-    data() {
-        return {
-            store: useStore()
-        }
-    },
-    computed: {
-        modalState() {
-            return this.store.modalState.modalWrap
-        },
-    },
-    methods: {
-        closeModal(modalName) {
-            this.store.closeModal(modalName)
-        }
-    }
+    mixins: [modalPropsMixin]
 }
 </script>
