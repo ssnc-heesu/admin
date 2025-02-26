@@ -1,11 +1,11 @@
 <template>
     <button 
     @click="openModal('modalWrap'), 
-    modalInfo('modalTest1', 'modal-sm', 'ModalTest01','')">modalTest1</button>
+    modalInfo('modalTest1', 'ModalTest01','')">modalTest1</button>
 
     <button 
     @click="openModal('modalWrap'), 
-    modalInfo('modalTest2', 'modal-sm', 'ModalTest02','모달설명도 나오는지 궁금해서 만들어 봄')">modalTest2</button>
+    modalInfo('modalTest2', 'ModalTest02','모달설명도 나오는지 궁금해서 만들어 봄<br />')">modalTest2</button>
 
     <div class="modal" v-if="modalState === true">
         <component 
@@ -30,6 +30,7 @@ export default {
     components: {
         ModalTest01,
         ModalTest02
-    }
+    },
+
 }
 </script>

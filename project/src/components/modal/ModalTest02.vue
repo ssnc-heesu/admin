@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-content" :modalSize="modalSize">
+    <div class="modal-content modal-sm">
         <div class="modal-head">
             <h2>{{ modalTit }}</h2>
             <p v-if="modalGuide!==''">{{ modalGuide }}</p>
